@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Money Donation</title>
+    <link rel='stylesheet' type="text/css" href="/static/lo.css">
+  </head>  
+  <body style='background-color:#F2EEF1'>
+    <h1>Help others today!</h1>
+    <p>Keen to support those affected by the virus?</p>
+    <p>A kind donation will go a long way in helping those affected by the pandemic</p>
+    <p><a href="{{ url_for('home') }}">Continue Browsing?</a><br></p>
+
+  <div style='text-align:center;>
+    <form method='POST'>
+      <div style='font-size:20px;'>Amount </div><br></br><input style='width:50%; margin-bottom:20px;' type='text' value='100.00' name='donation' required><br>
+      <div style='font-size:20px;'>Name</div> <br></br> <input style='width:50%;' type='text' placeholder='Anonymous' name='donator' required><br>
+      <input style='align:right; background-color: #805E73; color:white; padding: 16px 32px; margin: 4px 2px; font-size: 20px;' type='submit' value='Donate!'>
+    </form>
+    <p> {{ thanks }} </p>
+  </div>
+
+    <p> Thank you to those that have donated! Here are the top 10 donations </p>
+
+    <div align='center'>
+    <table style='border-collapse: collapse; border: 1px solid black; width:45%;'>
+      <tr style='border: 1px solid black; text-align:center;'>
+        <th style='border: 1px solid black'> Position</th>
+        <th style='border: 1px solid black;'>Name</th>
+        <th style='border: 1px solid black;'>Amount</th>
+      </tr>
+    {% for postion, position2, name, amount in donors %}
+      <tr style='border: 1px solid black;text-align:center;'>
+        <td style='border: 1px solid black;'>{{ position2 }}</td>
+        <td style='border: 1px solid black;'>{{ name }}</td>
+        <td style='border: 1px solid black;'>{{ amount }}</td>
+      </tr>
+    {% endfor %}
+    </table>
+    </div>
+    <br>
+    <br>
+    <div align="center" style='margin:20px;'>
+      <a href="{{ url_for('home') }}">Continue Browsing?</a>
+    </div>
+
+  </body>
+</html>

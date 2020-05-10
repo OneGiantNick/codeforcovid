@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>{{ user }}'s profile</title>
+    <link rel='stylesheet' type="text/css" href="/static/lo.css">
+  </head>  
+  
+  <body style='background-color:#F2EEF1'>
+   <h1>Welcome to {{ user }}'s profile</h1>
+   <p><a href="{{ url_for('home') }}">Continue Browsing?</a><br></p>
+   <h2>{{ user }}'s biography<h2>
+        <p>{{ bio }}</p>
+   <h2>{{ user }}'s statistics</h2>
+   <p>Total amount donated: {{ amtdon }}</p>
+   <p>Total items donated: {{ itmdon }}</p>
+  </body>
+</html>

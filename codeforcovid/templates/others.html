@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Money Donation</title>
+    <link rel='stylesheet' type="text/css" href="/static/lo.css">
+  </head>  
+  <body style='background-color:#F2EEF1'>
+    <h1>Keen to support those affected by the virus?</h1>
+    <p>Some people lack basic neccessities and services</p>
+    <p> <a href=" {{ url_for('home') }}">Continue browsing?</a></p>
+    <div style='text-align:center;>
+      <form method='post'>
+        <div style='font-size:20px;'>Services</div><br></br><input style='width:50%; margin-bottom:20px;' type='text' name='services' placeholder='Enter service to offer'>
+        <div style='font-size:20px;'>Phone Number</div><br></br><input style='width:50%; margin-bottom:20px;' type='text' name='number' placeholder='Phone Number'> <br></br>
+        <input style='align:right; background-color: #805E73; color:white; padding: 16px 32px; margin: 4px 2px; font-size: 20px;' type='submit'>
+      </form>
+      <p style='size:80px;'>Looking for others</p>
+      <form method='post'>
+        <div style='font-size:20px;'>Search for Services</div><br></br><input style='width:50%; margin-bottom:20px;' type='text' name='searching' placeholder='Search for desired service'> <br></br>
+        <input style='align:right; background-color: #805E73; color:white; padding: 16px 32px; margin: 4px 2px; font-size: 20px;' type='submit'>
+      </form>
+    </div>
+    <h3 style='color:#805E73'>Wish to support them in another way?</h3>
+    <p>Help us provide for them by donating money or food.</p>
+    <div>
+    <div align="center" style='margin:20px;'>
+      <a href="{{ url_for('money') }}">Donate</a>
+      <a href="{{ url_for('food') }}">Food</a>
+    </div>
+
+  </body>
+</html>

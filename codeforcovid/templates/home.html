@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>{{ username }}'s feed</title>
+    <link rel='stylesheet' type="text/css" href="/static/lo.css">
+  </head>  
+  <body style='background-color:#F2EEF1'>
+    <div>  
+      <h1>Welcome {{ username }}!</h1>
+    </div>
+    <div>
+      <p><a href="{{ url_for('profile') }}">view profile</a></p>
+      <div style='background-color:#805E73;padding:80;margin:50px;'>
+        <p><img src="/static/images/imagetwo.jpg" style="width:700px;height:360px;" class="center"></p>
+			  <h2><a href="{{ url_for('food') }}">FOOD</a></h2>
+        <p style='color:white;'>Browse or donate food of your choice</p>
+      </div>
+    </div>
+    <div>
+      <div style='background-color:#805E73;padding:80;margin:50px;'>
+        <p><img src="/static/images/imageone.jpg" style="width:700px;height:360px;" class="center"></p>
+			  <h2><a href="{{ url_for('money') }}">DONATE</a></h2>
+        <p style='color:white;'>Donate money to those badly hit in this pandemic</p>
+      </div>
+      <div style='background-color:#805E73;padding:80;margin:50px;'>
+        <p><img src="/static/images/imagethree.jpg" style="width:700px;height:360px;" class="center"></p>
+			  <h2><a href="{{ url_for('others') }}">MISCELLANEOUS</a></h2>
+        <p style='color:white;'>Offer or request for different services</p>
+      </div>
+    </div>
+    <div>
+      <p><a href="{{ url_for('logout') }}">Log Out</a></p>
+    </div>
+  </body>
+</html>

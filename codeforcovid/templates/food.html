@@ -1,0 +1,78 @@
+<?php  
+$connect = mysqli_connect("localhost", "root", "", "fooddb");
+?> 
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>Food Donation</title>
+	<link rel='stylesheet' type="text/css" href="/static/lo.css">
+</head>
+
+<body style='background-color:#F2EEF1'>
+	<br /><br />
+    <div>
+      <h1>Keen to support those affected by the virus?</h1>
+      <p>Due to many people losing their jobs, there are some who struggle to afford food. </p>
+      <p> <a href=" {{ url_for('home') }}">Continue browsing?</a></p>
+      <form action ="" method='post' enctype= 'multipart/form-data'>
+        <input type='file' name='image' id='i mage' />
+        <br />
+        <input type='submit' name='insert' id='insert' value='Insert' />
+      </form>
+      <br />
+      <br />
+      <table class='table table-bordered'>
+        <tr>
+          <th>Food Options</th>
+       </tr>
+      <?php
+      $query = "SELECT * FROM tbl_images ORDER BY id DESC";
+      $result = mysqli_query($connect, $query);
+      while($row = mysqli_fetch_array($result))
+      {
+        echo '
+          <tr>
+            <td>
+              <img src="data:image/jpeg;base64,'.base64_encode($row['name'] ).'" />
+            </td>
+          </tr>
+      </table>
+    </div>
+    <h3 id='food'>Wish to support them in another way?</h3>
+    <p>Help us provide for them by donating money or other items</p>
+    <div align="center" style='margin:20px;'>
+      <a href="{{ url_for('money') }}">Money</a>
+      <a href="{{ url_for('others') }}">Others</a>
+    </div>
+
+  </body>
+</html>
+
+<script>
+  $(document).ready(function(){
+    $('#insert').click(function(){
+      var image_name = $('#image').val();
+      if(image_name == '')
+      {
+        alert("Please Select Image");
+        return false;
+      }
+      else
+      {
+        var extension = $('#image').val().split('.').pop().toLowerCase();
+        if(jQuery.inArray(extension, ['gif','png','jpg','jpeg']) == -1)
+        {
+          alert('Invalid Image File');
+          $('#image').val('');
+          return false;
+        }
+      }
+			if(isset($_POST["insert"]))
+			{
+				$file = addslashes(file_get_contents($_FILES["image"]["tmp_name"]));  
+				$query = "INSERT INTO tbl_images(name) VALUES ('$file')";  
+				if(mysqli_query($connect, $query))
+				{
+					echo '<script>alert("Image Inserted into Database")</script>
+</script>

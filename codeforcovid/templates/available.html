@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Available Services</title>
+    <link rel='stylesheet' type="text/css" href="/static/lo.css">
+  </head>  
+  <body>
+    <h1>Below Are the services</h1>
+    <p>
+    <ul>
+    {% for services in matching %}
+      <li>{{services}}</li>
+    {% endfor %}
+    </ul>
+    </p>
+  </body>
+</html>

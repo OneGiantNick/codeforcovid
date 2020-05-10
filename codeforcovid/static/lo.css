@@ -1,0 +1,129 @@
+
+body {
+  padding: 8px;
+  margin: 10px;
+  background: white;
+}
+
+.home{
+  background: #805E73;
+  color: white;
+  font-family:monospac;
+}
+
+
+h1{
+  text-align: center;
+  font-family:monospac;
+  font-size: 80px;
+  color: white;
+  background-color: #805E73;
+}
+
+h2{
+  text-align: center;
+  font-family:monospac;
+  font-size: 35px;
+  color: #416788;
+  padding: 5px;
+}
+
+
+h3{
+  text-align: center;
+  font-family:monospac;
+  font-size: 35px;
+  color: white;
+  padding: 5px;
+
+}
+
+#food{
+  text-align: center;
+  font-family:monospac;
+  font-size: 20px;
+  padding: 20px;
+  color: #544E61;
+}
+
+h4{
+  text-align: center;
+  font-family:monospac;
+  font-size: 50px;
+  color: #416788;
+  padding: 5px;
+
+}
+
+p{
+  text-align: center;
+  font-family:monospac;
+  font-size: 20px;
+  padding: 20px;
+  color: white;
+}
+
+.input input[type=text] {
+  float: center;
+  width: 50%;
+  padding: 12px 20px;
+  margin: 15px 0;
+  box-sizing: border-box;
+}
+
+input[type=button], input[type=submit], input[type=reset] {
+  text-align: right;
+  background-color: white;
+  border: none;
+  color: 805E73;
+  padding: 16px 32px;
+  text-decoration: none;
+  margin: 4px 2px;
+  cursor: pointer;
+  font-size: 10px;
+}
+
+#partner {
+  text-align: center;
+  }
+
+.login{ /* which stuff does this code affect*/
+  background-color: #805E73;
+  color: white;
+  padding: 1em 1.5em;
+  text-decoration: none;
+  text-transform: uppercase;
+  text-align: center;
+}
+
+
+a{
+  background-color: white;
+  color: #805E73;
+  padding: 1em 1.5em;
+  text-decoration: none;
+  text-transform: uppercase;
+  text-align:center;
+}
+
+a:link {
+  text-align: center;
+  color: #805E73;
+}
+
+a:hover {
+  text-align: center;
+  color: #92AFC8;
+}
+
+.center {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+}
+
+table {
+  color:#805E73;
+  border: 2px;
+}

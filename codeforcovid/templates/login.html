@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Homepage</title>
+    <link rel='stylesheet' href="/static/lo.css">
+  </head>
+  <body style='background-color:#F2EEF1'>
+    <h1>
+      Please login to existing account      
+    </h1>
+    
+    {% with messages = get_flashed_messages() %}
+      {% if messages %}
+        {% for msg in messages %}
+          <p>{{ msg }}</p>
+        {% endfor %}
+      {% endif %}
+    {% endwith %}
+    
+    <div style='text-align:center;'>
+    <form method='POST'>
+        <div style='font-size:20px;'><label for 'username_input'>Username </label></div><br></br>
+        <input type='text' id='username_input' name='username_input' value='liangkuanhsien' placeholder='Enter Username' size='10' required><br></br>
+        <div style='font-size:20px;'><label for 'password_input'>Password </label></div><br></br>
+        <input type='password' id='password_input' name='password_input' value='hunter123' placeholder='Enter Password' size='20' required><br><br>
+    </div>
+      <p>
+        <div class='login'>
+          <a href=" {{ url_for('index') }}">Back</a>
+          <input style="color:#805E73; size:50px;" type='Submit' value='Log In' size='30'>
+        </div>
+      </p>
+      
+    </form>
+  </body>
+</html>

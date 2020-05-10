@@ -1,0 +1,26 @@
+<html>
+  <head>
+    <title>Homepage</title>
+    <link rel='stylesheet' href="/static/lo.css">
+  </head>
+  <body style='background-color:#F2EEF1'>
+    <h1>
+      Create New Account?
+    </h1>
+    <p>{{ error }}</p>
+    <div class='input'>
+    <form method='POST'>
+      <!-- remove values later -->
+      <p>Username: <input type='text' name='username_input' placeholder='Enter Username' required></p>
+      <p>Password: <input type='password' name='password_input' placeholder='Enter Password' required></p>
+      </div>
+      <p>
+        <div class='login'>
+          <a href=" {{ url_for('index') }}">Back</a>
+          <input type='Submit' value='Sign Up'>
+        </div>
+      </p>
+      
+    </form>
+  </body>
+</html>
